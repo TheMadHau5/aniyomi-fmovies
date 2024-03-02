@@ -184,7 +184,7 @@ jobs:
 
       - name: Upload APKs (chunk ${{ matrix.chunk }})
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4
-        if: "github.repository == 'aniyomiorg/aniyomi-extensions'"
+        if: "true"
         with:
           name: "individual-apks-${{ matrix.chunk }}"
           path: "**/*.apk"
@@ -198,7 +198,7 @@ jobs:
     needs:
       - build_multisrc
       - build_individual
-    if: "github.repository == 'aniyomiorg/aniyomi-extensions'"
+    if: "true"
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifacts
